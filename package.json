@@ -6,12 +6,9 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "prepublish": "npm run copy:cdn",
     "test:build": "npm run build && vite build --config test/vite.config.js",
     "test:dev": "npm run build && vite --config test/vite.config.js",
-    "test:preview": "vite preview --config test/vite.config.js",
-    "simulator:cdn": "http-server cdn/ --port 8888",
-    "copy:cdn": "node script/updateCDN.js"
+    "test:preview": "vite preview --config test/vite.config.js"
   },
   "files": [
     "dist",
@@ -44,7 +41,8 @@
     "typescript": "^4.3.5",
     "vite": "^2.4.4",
     "vue": "^3.1.5",
-    "vue-router": "^4.0.12"
+    "vue-router": "^4.0.12",
+    "esbuild": "^0.15.12"
   },
   "peerDependencies": {
     "monaco-editor": ">=0.33.0"
